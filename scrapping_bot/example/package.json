@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.43.1",
+    "express": "^4.19.2",
+    "playwright": "^1.43.1"
+  }
+}
