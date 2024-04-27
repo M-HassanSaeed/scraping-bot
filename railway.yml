@@ -8,7 +8,7 @@ services:
     buildScript: |
       npm ci
       npm install -g playwright
-      npx playwright install
+      npx playwright install --with-deps
 
     # Define the default command to run when the container starts
     startCommand: npm start
