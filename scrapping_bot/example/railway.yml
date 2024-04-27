@@ -8,7 +8,7 @@ services:
       - npm install
       - npm install -g playwright
       - npm install typescript
-      - npx playwright install
+      - npx playwright install chromium
       # Additional commands to install other dependencies if needed
 
   custom_docker_service:
