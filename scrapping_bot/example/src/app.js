@@ -2,7 +2,7 @@ const express = require('express');
 const { spawn } = require('child_process');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the PORT environment variable provided by Railway or default to 3000
 
 app.use(express.json());
 
@@ -36,6 +36,7 @@ app.post('/scrape', async (req, res) => {
   res.json({ output: outputData });
 });
 
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+// Listen on `0.0.0.0` and the provided `PORT` environment variable
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is listening at http://0.0.0.0:${port}`);
 });
