@@ -7,7 +7,6 @@ services:
     commands:
       - npm install
       - npm install -g playwright
-      - npm install -g typescript
+      - npm install typescript
       - npx playwright install
       # Additional commands to install other dependencies if needed
- 
