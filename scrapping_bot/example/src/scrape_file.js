@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 async function main(noticeNumber, taxPayerID) {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const page = await context.newPage();
 
