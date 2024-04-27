@@ -1,0 +1,12 @@
+services:
+  web:
+    # Define your web service here
+
+  install:
+    image: 'railway/node:16'
+    commands:
+      - npm install
+      - npm install -g playwright
+      - npm install -g typescript
+      - npx playwright install
+      # Additional commands to install other dependencies if needed
