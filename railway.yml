@@ -8,7 +8,11 @@ services:
     buildScript: |
       npm ci
       npm install -g playwright
-      npx playwright install --with-deps
+      npx playwright install
+
+    # Set environment variable for Chromium executable path
+    environment:
+      CHROMIUM_EXECUTABLE_PATH: "$(which chromium)"
 
     # Define the default command to run when the container starts
     startCommand: npm start
