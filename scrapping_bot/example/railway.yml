@@ -10,3 +10,4 @@ services:
       - npm install -g typescript
       - npx playwright install
       # Additional commands to install other dependencies if needed
+ 
