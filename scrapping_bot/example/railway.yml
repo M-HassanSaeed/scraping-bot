@@ -1,24 +1,3 @@
-# services:
-#   web:
-#     # Define your web service here
-
-#   install:
-#     image: 'railway/node:16'
-#     commands:
-#       - npm install
-#       - npm install playwright
-#       - npx playwright install 
-#       - npx playwright install chromium
-#       # Additional commands to install other dependencies if needed
-
-#   custom_docker_service:
-#     image: 'your-custom-docker-image:tag'
-#     port: 8080
-#     command: 'npm start'
-#     env:
-#       - NODE_ENV=production
-#     # Additional configuration options for your Docker service
-
 # railway.yml
 
 version: 2
@@ -33,5 +12,4 @@ services:
       npx playwright install --with-deps
 
     # Define the default command to run when the container starts
-    startCommand: npm start
-
+    startCommand: node src/app.js
