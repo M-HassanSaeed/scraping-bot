@@ -4,11 +4,11 @@ services:
     # Specify your preferred Node.js version
     image: node:14
 
-    # Install dependencies and Playwright with browsers
+    # Install dependencies and Playwright
     buildScript: |
       npm ci
       npm install -g playwright
-      npx playwright install --with-deps
+      npx playwright install --with-deps --path C:\Users\hp\Documents\GitHub\scraping-bot\browsers
 
     # Define the default command to run when the container starts
     startCommand: npm start
