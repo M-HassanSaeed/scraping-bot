@@ -10,3 +10,11 @@ services:
       - npm install typescript
       - npx playwright install
       # Additional commands to install other dependencies if needed
+
+  custom_docker_service:
+    image: 'your-custom-docker-image:tag'
+    port: 8080
+    command: 'npm start'
+    env:
+      - NODE_ENV=production
+    # Additional configuration options for your Docker service
