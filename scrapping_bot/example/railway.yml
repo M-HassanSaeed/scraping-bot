@@ -12,4 +12,4 @@ services:
       npx playwright install --with-deps
 
     # Define the default command to run when the container starts
-    startCommand: node src/app.js
+    startCommand: npm start
