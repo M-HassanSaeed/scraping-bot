@@ -13,6 +13,3 @@ services:
     # Define the default command to run when the container starts
     startCommand: npm start
 
-    # Set environment variable to specify where browsers should be downloaded
-    env:
-      PLAYWRIGHT_BROWSERS_PATH: ./browsers
