@@ -6,8 +6,8 @@ services:
     image: 'railway/node:16'
     commands:
       - npm install
-      - npm install -g playwright
-      - npm install typescript
+      - npm install playwright
+      - npx playwright install 
       - npx playwright install chromium
       # Additional commands to install other dependencies if needed
 
