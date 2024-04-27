@@ -4,15 +4,11 @@ services:
     # Specify your preferred Node.js version
     image: node:14
 
-    # Install dependencies and Playwright
+    # Install dependencies and Playwright with browsers
     buildScript: |
       npm ci
       npm install -g playwright
-      npx playwright install
-
-    # Set environment variable for Chromium executable path
-    environment:
-      CHROMIUM_EXECUTABLE_PATH: "$(which chromium)"
+      npx playwright install --with-deps
 
     # Define the default command to run when the container starts
     startCommand: npm start
