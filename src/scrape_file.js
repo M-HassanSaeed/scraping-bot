@@ -4,20 +4,14 @@ async function main(noticeNumber, taxPayerID) {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const page = await context.newPage();
-
   await page.goto('https://mytax.dc.gov/_/');
-
   const element = page.locator('text=Validate a Certificate of');
   await element.scrollIntoViewIfNeeded();
-  // fix
   await page.click('text=Validate a Certificate of');
-
   await page.fill("//input[contains(@name, 'Dc-8')]", noticeNumber);
   await page.fill("//input[contains(@name, 'Dc-a')]", taxPayerID);
   await page.click("//button[contains(@data-name, 'Dc-c')]");
-
   await page.waitForTimeout(2000);
-
   const nonCompliance = await page.textContent('#caption2_Dc-k');
   const certificateNotFound = await page.textContent('#caption2_Dc-g');
   const issueDate = await page.textContent('#caption2_Dc-h');
@@ -36,8 +30,6 @@ async function main(noticeNumber, taxPayerID) {
   }  
   await browser.close();
 }
-
 const noticeNumber = process.argv[2];
 const taxPayerID = process.argv[3];
-
 main(noticeNumber, taxPayerID);

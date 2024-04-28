@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "postbuild": "npx playwright install"
   },
   "dependencies": {
     "@playwright/test": "^1.43.1",
